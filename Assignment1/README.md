@@ -48,4 +48,4 @@ See histo.png
 
 ### 6) Write (text) a sentence into the assignment_1.py about the result of the histogram.
 
-![alt text](https://github.com/grimetone/BI/tree/master/Assignment1/histo.png)
+ ![alt text](https://github.com/grimetone/BI/blob/master/Assignment1/histo.png "Histogram")
