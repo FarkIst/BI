@@ -75,12 +75,12 @@ def generate_plot(data):
 def generate_histogram(data):
     num_bins = 7
     x_values, y_values = zip(*data)
-    sigma = 15
-    mu = 100
-    n, bins, patches = plt.hist(y_values, num_bins, density=1, facecolor='blue', alpha=0.5)
-    y = mlab.normpdf(bins, mu, sigma)
-    plt.plot(bins, y, 'r--')
-    plt.subplots_adjust(left=0.15)
+    i, prices = zip(*data)
+    prices = list(prices)
+    fig = plt.figure(figsize=(10, 10))
+    plt.ylabel('No. of houses')
+    plt.xlabel('Prices')
+    plt.hist(prices,num_bins,edgecolor = "black")
     plt.savefig('histo.png')
     plt.close()
 
