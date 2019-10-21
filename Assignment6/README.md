@@ -3,7 +3,7 @@
 
 ### 1.1- Data preprocessing
 
-![alt text](https://github.com/grimetone/BI/tree/master/Assignment6/img/HackerNews_Plot.png "HackerNews Karma Progression Plot")
+![alt text](https://github.com/grimetone/BI/blob/master/Assignment6/img/HackerNews_Plot.png "HackerNews Karma Progression Plot")
 
 The plot confirms our hypothesis. There is a clear downtrend in the amount of karma-points in newer accounts, with the natural expection of some outliers.
 
@@ -38,11 +38,11 @@ When we print out the regression coefficient we get `-3.73534337e-05` or `-0.000
 
 2.
 
-![alt text](https://github.com/grimetone/BI/tree/master/Assignment6/img/PredictorModel.png "Training Data")
+![alt text](https://github.com/grimetone/BI/blob/master/Assignment6/img/PredictorModel.png "Training Data")
 
 Here we have a plot of our training data. The predictive line is centered nicely. 
 
-![alt text](https://github.com/grimetone/BI/tree/master/Assignment6/img/FullModel.png "Full Plot")
+![alt text](https://github.com/grimetone/BI/blob/master/Assignment6/img/FullModel.png "Full Plot")
 
 Here we have a full plot with all of our data with just the predictive line.
 
@@ -56,35 +56,65 @@ When you subtract the current epox time from that(1571696765 -  1463922656)  you
 4. 
 
 `Actual	Predicted
+
 0	596.0	6693.205444
+
 1	5497.0	3002.947069
+
 2	204.0	11897.468077
+
 3	5503.0	559.629722
+
 4	9.0	-150.663451
+
 5	9924.0	8879.785133
+
 6	14022.0	1992.969240
+
 7	608.0	6833.189641
+
 8	1040.0	1929.380883
+
 9	12558.0	5574.542794
+
 10	2599.0	7945.127925
+
 11	1713.0	8886.303755
+
 12	839.0	6017.491876
+
 13	5519.0	6067.948147
+
 14	2324.0	7644.855027
+
 15	130.0	2871.015376
+
 16	5643.0	6863.012211
+
 17	1351.0	7437.489158
+
 18	1588.0	4200.592546
+
 19	421.0	2864.496418
+
 20	36691.0	6873.288851
+
 21	3973.0	7802.211410
+
 22	985.0	1526.232146
+
 23	26037.0	6397.153857
+
 24	72.0	-434.718086
+
 25	3.0	-224.841842
+
 26	5042.0	4776.013601
+
 27	27759.0	8456.902614
+
 28	649.0	2332.124672
+
 29	1815.0	10096.638007`
 
 Here we show a sample of our machine learning testing itself on the 20% of the HackerNews JSON data not included in our training data. The models prediction seems to be quite off.
