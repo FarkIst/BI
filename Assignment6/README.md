@@ -214,4 +214,47 @@ Which equals to `1039378362` unix seconds
 or 
 `~12,029 Days`
 
+## 3. Prediction of breast cancer malignity
 
+### 3.1 - Looking at the data
+
+`0	1	2	3	4	5	6	7	8	9	...	22	23	24	25	26	27	28	29	30	31
+
+0	842302	M	17.99	10.38	122.80	1001.0	0.11840	0.27760	0.3001	0.14710	...	25.38	17.33	184.60	2019.0	0.1622	0.6656	0.7119	0.2654	0.4601	0.11890
+
+1	842517	M	20.57	17.77	132.90	1326.0	0.08474	0.07864	0.0869	0.07017	...	24.99	23.41	158.80	1956.0	0.1238	0.1866	0.2416	0.1860	0.2750	0.08902
+
+2	84300903	M	19.69	21.25	130.00	1203.0	0.10960	0.15990	0.1974	0.12790	...	23.57	25.53	152.50	1709.0	0.1444	0.4245	0.4504	0.2430	0.3613	0.08758
+
+3	84348301	M	11.42	20.38	77.58	386.1	0.14250	0.28390	0.2414	0.10520	...	14.91	26.50	98.87	567.7	0.2098	0.8663	0.6869	0.2575	0.6638	0.17300
+
+4	84358402	M	20.29	14.34	135.10	1297.0	0.10030	0.13280	0.1980	0.10430	...	22.54	16.67	152.20	1575.0	0.1374	0.2050	0.4000	0.1625	0.2364	0.07678`
+
+
+There are `569 rows × 32 columns`. There are a lot of columns to consider. The column I was able to distinguish is the column on index 1 which most likely describes whether the patients' tumor is malignant(M) or benign(B).
+
+### 3.2 - Building the model
+
+![alt text](https://github.com/grimetone/BI/blob/master/Assignment6/img/histogram_plots.png "Plotting inputs")
+
+These models can help us to choose a column indexes with strong correlation to the benignity or malignancy of the patient.
+
+Going just by these models we choose indexes 16, 30 as the data is very localized indicating causation.
+
+`Accuracy of Logistic regression classifier on training set: 0.72
+Accuracy of Logistic regression classifier on test set: 0.71`
+
+Our accuracy was quite poor choosing these two, other indexes provided much better results and choosing all of the indexes resulted in even greater predictions as seen below.
+
+With a full set using logistical regression we were able to get very high accuracy rates: 
+`Accuracy of Logistic regression classifier on training set: 0.97`
+`Accuracy of Logistic regression classifier on test set: 0.96`
+
+### 3.3 - Evaluating the model
+
+I would argue that the data is balanced to an extent as we are presented with an fairly even number of benign and malignant data samples. I am not sure it the lack of healthy data sets will skew the data as seen below. 
+
+![alt text](https://github.com/grimetone/BI/blob/master/Assignment6/img/cancer_count.png "Count")
+
+ROC and Precision-Recall Curves are used for evaluating a prediction model. 
+ROC curves plot the false hit rate vs the hit rate and are best used when classes are balanced., as opposed to Precision_recall Curves which are best suited for unbalanced sets. As we have come to the conclusion that the data is reasonably balanced, we reason that ROC is best used for this prediction model.
