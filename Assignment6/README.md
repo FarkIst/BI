@@ -1,6 +1,7 @@
 # Assignment 6 for Business Intellegence Course
 ## Basic Machine Learning
 
+## Part 1: Predicting Hackernews Points With Linear Regression in One Variable
 ### 1.1- Data preprocessing
 
 ![alt text](https://github.com/grimetone/BI/blob/master/Assignment6/img/HackerNews_Plot.png "HackerNews Karma Progression Plot")
@@ -120,7 +121,97 @@ When you subtract the current epox time from that(1571696765 -  1463922656)  you
 Here we show a sample of our machine learning testing itself on the 20% of the HackerNews JSON data not included in our training data. The models prediction seems to be quite off.
 
 Mean Absolute Error: 4167.507217090202
+
 Mean Squared Error: 60489353.90798358
+
 Root Mean Squared Error: 7777.490206228715
 
 The root mean squared error is very high, suggesting a high residual variance. More sample data is recommended. 
+
+## 2. Predicting Hackernews Points With Multivariate Linear Regression
+
+	Coefficient
+
+created	-0.000007
+
+submitted	2.709600
+
+Here we can see the coefficients for the two variables. For every decrease in seconds the karma points decreases by 0.000007  and for every submission there is an increase in karma by ~2.7.
+
+     Actual     Predicted
+
+2615    596.0   1300.877731
+
+296    5497.0   6843.389891
+
+7443    204.0   2054.710945
+
+2343   5503.0   8668.199300
+
+5564      9.0   -387.965699
+
+5314   9924.0  11395.384411
+
+33    14022.0  12194.341306
+
+5335    608.0   1949.318375
+
+2103   1040.0   2105.876616
+
+8075  12558.0   6960.099947
+
+8627   2599.0   3821.572273
+
+7404   1713.0   3197.309592
+
+4617    839.0   2054.278888
+
+1149   5519.0  10354.750028
+
+8750   2324.0   2721.541435
+
+390     130.0    219.022976
+
+39     5643.0   5580.138893
+
+7270   1351.0   2394.235825
+
+5648   1588.0   1978.769419
+
+6301    421.0    729.962325
+
+31    36691.0  22140.357341
+
+4624   3973.0   7047.331174
+
+4706    985.0    415.576442
+
+1065  26037.0  33513.431102
+
+6737     72.0   -406.652311
+
+Here we show a sample of our machine learning testing itself on the 20% of the HackerNews JSON data not included in our training data. The models prediction is a lot closer using multiple linear regression.
+
+
+MEA: 1718.8780099769258
+
+MSE: 17351701.441963457
+
+Root Mean Squared Error: 4165.537353327114
+
+The root mean squared error is very high, suggesting a high residual variance. However it is about half of what it was previously when we only used the creation date variable. This shows that our data more than likely doens't have a linear relationship. More sample data is recommended.
+
+
+(1000 - model.intercept_ + -0.000007 * #{unix_time}) / (-2.709600)
+
+You would need `6967.04573757315` posts if one was to register ones account on : 2016-05-22 13:10:56.026025057.
+
+
+If we were to set the posts variable to 500 we can use the following formula to see how long it would take to get 1000 karma points: 
+(1000 - model.intercept_ + 2.709600 * 500) / -0.000007
+
+Which equals to `1039378362` unix seconds 
+or 
+`~12,029 Days`
+
+
